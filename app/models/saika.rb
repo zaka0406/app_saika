@@ -1,0 +1,2 @@
+class Saika < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+module SaikasHelper
+end
