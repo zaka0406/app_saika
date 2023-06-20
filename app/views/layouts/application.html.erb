@@ -1,16 +1,68 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>AppSaika</title>
+    <title>SAIKA</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+    <meta name="instagram-access-token" content="">
+    <% csrf_meta_tags %>
+    <% csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%# <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class = "main">
+    <header class="header">
+      <div class="title">
+        <p class="title-nav">
+         <%= link_to "心のメンテナンスサロン",saikas_path %>
+        </p>
+        <h1 class="main-title">
+         <%= link_to "SAIKA",saikas_path %>
+        </h1>
+      </div>
+      <ul class="contents-nav">
+        <li class="content">
+          <%= link_to "about",about_saikas_path %>
+        </li>
+        <li class="content">
+          <a href="https://www.camesjapan.com/">キャメスとは</a>
+        </li>
+        <li class="content">
+          <a href="https://ameblo.jp/chi-harusora">blog</a>
+        </li>
+        <li class="content">
+          <a href="#">contact</a>
+        </li>
+        <li class="content">
+          <a href="#">ご予約</a>
+        </li>
+        <li class content>
+         <a href="https://instagram.com/chihiro_851?igshid=MzNlNGNkZWQ4Mg==" target="_blank">
+           <img class="instagram-icon" src="/images/Instagram_Glyph_Gradient copy.png" alt="Instagram">
+         </a>
+        </li>
+      </ul>
+    </header>
+
+    <div class="contents">
+      <%= yield %>
+    </div>
+
+    <footer class="footer">
+    <div class="addres">
+      <div class="addres-imag">
+        <img class ="fotter-addres-image"src="/images/23731698.jpg" alt="addres">
+      </div>
+      <p class="addres-main">
+        salon住所:長野県佐久市（＊詳細はご予約時にお伝えします。）
+      </p>
+    </div>
+    <div class="copy">zaka©</div>
+    </footer>
   </body>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="index.js"></script>
+  
 </html>

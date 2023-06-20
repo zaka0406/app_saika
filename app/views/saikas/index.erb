@@ -1,0 +1,60 @@
+<section class="main-message">
+   <div class="message">
+     <div class="main-imag">
+      <%= image_tag "/images/114993.jpg",class: "main-message-image"%>
+    </div>
+    <div class="message-main">
+      <P class="message-main-nav">感性を研ぎ澄まし</P>
+      <h2 class="message-main-title">心の声を聞く時間をあなたに</h2>
+    </div>
+</section>
+
+<script>
+window.onload = function () {
+  fade_effect();
+
+  $(window).scroll(function () {
+    fade_effect();
+  });
+
+  function fade_effect() {
+    $('.service-nav').each(function () {
+      const targetElement = $(this).offset().top;
+      const scroll = $(window).scrollTop();
+      const windowHeight = $(window).height();
+      if (scroll > targetElement - windowHeight) {
+        $(this).addClass('view');
+      }
+    });
+  }
+};
+</script>
+
+<section class="service">
+  <h2 class = "service-title">
+    <a href="#">service</a>
+  </h2>
+    <p class="service-content">
+        ブレない究極の自分軸が手に入る（輝き革命）をあなたに
+    </p>
+  <div class="service-container">
+    <div class="service-nav">
+      <img src="/images/114992.jpg" class="service-img" alt="">
+      <p class="service-comment">
+      調香師＆心のメンテナンス<br>カウンセラーのちひろと申します
+       </p>
+    </div>
+    <div class="service-nav">
+      <img src="/images/115221.jpg" class="service-img" alt="">
+      <p class="service-comment">
+      12色のカラーを使って、あなたの心からのメッセージを<br>分かりやすくお伝えしていくカウンセリング
+       </p>
+    </div>
+    <div class="service-nav">
+      <img src="/images/115003.jpg" class="service-img" alt="">
+      <p class="service-comment">
+      カウンセリングから導き出したアロマで<br>あなたオリジナルの香りが作れます       </p>
+    </div>
+  </div>
+
+</section>

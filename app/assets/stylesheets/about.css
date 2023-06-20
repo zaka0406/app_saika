@@ -1,0 +1,31 @@
+.about-image{
+    text-align: center;
+    
+}
+.about-message-image{
+    height: 400px;
+    width: 500px;
+    border-radius: 20%;
+    margin: 100px auto 20px auto;
+ 
+    animation-name: fade;
+    animation-duration: 2s;
+}
+
+@keyframes fade{
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+  }
+
+.about-message{
+    text-align: center;
+}
+
+.about-message-contents{
+    font-size: 15px;
+    line-height: 20px;
+}
