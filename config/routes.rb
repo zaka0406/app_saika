@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # root追加
     collection do
       get "about"
+      get "service"
     end
   end
 

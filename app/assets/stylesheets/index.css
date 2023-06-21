@@ -120,7 +120,7 @@ a,p,h1,h2{
 
     .service-nav{
       opacity : 0;
-      transition: opacity 2s;
+      transition: opacity 3s;
     }
 
     .service-nav.view{
@@ -129,6 +129,13 @@ a,p,h1,h2{
     
   
       .service-img{
+        height: 300px;
+        width: 300px;
+        border-radius: 50%;
+      }
+
+      .service-kyames{
+        object-fit: cover;
         height: 300px;
         width: 300px;
         border-radius: 50%;
@@ -162,3 +169,55 @@ a,p,h1,h2{
         text-align: center;
         margin-top: 20px;
       }
+
+      /* スマホ対応 */
+
+      @media (max-width: 480px) {
+        .main-title {
+          font-size: 40px;
+        }
+      
+        .main-message-image {
+          height: 200px;
+          width: 250px;
+          padding: 20px 0px 0px 100px;
+        }
+      
+        .message {
+          flex-direction: column;
+          text-align: center;
+          margin-bottom: 20px;
+        }
+      
+        .message-main {
+          padding-right: 0;
+        }
+      
+        .service-container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+        }
+      
+        .service-nav {
+          opacity: 1;
+          width: 300px;
+          text-align: center;
+        }
+      
+        .service-img,
+        .service-kyames {
+          height: 200px;
+          width: 200px;
+        }
+      
+        .service-comment {
+          font-size: 12px;
+        }
+      
+        .footer {
+          font-size: 12px;
+        }
+      }
+      

@@ -9,29 +9,31 @@
     </div>
 </section>
 
-
 <script>
- window.onload = function () {
-  fade_effect();
+  window.onload = function () {
+    if (window.matchMedia("(min-width: 768px)").matches) {
+      fade_effect();
 
-  $(window).scroll(function () {
-    fade_effect();
-  });
+      $(window).scroll(function () {
+        fade_effect();
+      });
 
-  function fade_effect() {
-    $('.service-nav').each(function () {
-      const targetElement = $(this).offset().top;
-      const scroll = $(window).scrollTop();
-      const windowHeight = $(window).height();
-      if (scroll > targetElement - windowHeight && scroll < targetElement + $(this).outerHeight()) {
-        $(this).addClass('view');
-      } else {
-        $(this).removeClass('view');
+      function fade_effect() {
+        $('.service-nav').each(function () {
+          const targetElement = $(this).offset().top;
+          const scroll = $(window).scrollTop();
+          const windowHeight = $(window).height();
+          if (scroll > targetElement - windowHeight && scroll < targetElement + $(this).outerHeight()) {
+            $(this).addClass('view');
+          } else {
+            $(this).removeClass('view');
+          }
+        });
       }
-    });
-  }
-};
+    }
+  };
 </script>
+
 
 <section class="service">
   <h2 class = "service-title">
@@ -48,13 +50,13 @@
        </p>
     </div>
     <div class="service-nav">
-      <img src="/images/115221.jpg" class="service-img" alt="">
+      <img src="/images/115221.jpg" class="service-kyames" alt="">
       <p class="service-comment">
-      12色のカラーを使って、あなたの心からのメッセージを<br>分かりやすくお伝えしていくカウンセリング
+      12色のカラーを使ってあなたの心からのメッセージを<br>分かりやすくお伝えしていくカウンセリング
        </p>
     </div>
     <div class="service-nav">
-      <img src="/images/115003.jpg" class="service-img" alt="">
+      <img src="/images/115003.jpg" class="service-kyames" alt="">
       <p class="service-comment">
       カウンセリングから導き出したアロマで<br>あなたオリジナルの香りが作れます       </p>
     </div>
