@@ -101,3 +101,10 @@ hr {
 input, select {
     vertical-align:middle;
 }
+
+.simple-calendar {
+    .day {
+        height: 40px;
+    }
+
+}

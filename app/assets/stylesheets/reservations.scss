@@ -1,0 +1,51 @@
+// Place all the styles related to the reservations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.reservation{
+    margin-top: 100px;
+    text-align: center;
+}
+
+.reservation-nav{
+    margin-bottom: 20px;
+}
+
+.reservation-title{
+    font-size: 50px;
+    margin: 20px 0;
+}
+
+.calendar-title{
+    font-weight: bold;
+}
+
+.calendar-heading{
+    text-align: left;
+    margin: 10px 0 10px 110px;
+}
+
+table.table.table-striped {
+    margin: 0 auto;
+    width: 80%;
+    height: 100%;
+    table-layout: fixed;
+    background-color: aliceblue;
+  }
+  
+  table.table.table-striped thead th,
+  table.table.table-striped tbody td {
+    // セルを均等に8分割へ分割
+    width: calc(100% / 8);
+    height: 30px; 
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  table.table.table-striped .dayno {
+    line-height: 30px; 
+  }
+
+  table.table.table-striped tbody tr:nth-child(even) {
+    background-color: #f5f5f5;
+  }
