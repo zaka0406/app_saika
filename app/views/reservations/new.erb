@@ -1,0 +1,78 @@
+<div class="reservation">
+    <h1 class="reservation-title">新規予約</h1>
+
+   
+        <%= form_with model: @reservation, url: confirm_reservations_path, class: 'form' do |form| %>
+        <%# <%= render 'layouts/error_messages', model: form.object %>
+
+        <div class="form-group">
+            <div class="nav">
+            <%= form.label :day, '日付' %>
+            <span class="required-label">必須</span>
+            </div>
+            <div class="input">
+            <%# <%= form.text_field :day, class: 'form-control', value: @day, readonly: true %>
+            <%= form.text_field :day, class: 'form-control', value: @day %>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="nav">
+            <%= form.label :time, '時間' %>
+            <span class="required-label">必須</span>
+            </div>
+            <div class="input">
+            <%# <%= form.text_field :time, class: 'form-control', value: @time, readonly: true %>
+            <%= form.text_field :time, class: 'form-control', value: @time %>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="nav">
+            <%= form.label :name, '名前' %>
+            <span class="required-label">必須</span>
+            </div>
+            <div class="input">
+            <%= form.text_field :name, class: 'form-control', value: @name, placeholder: "お名前を入力" %>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="nav-email">
+            <%= form.label :email, 'emailアドレス' %>
+            <span class="required-label">必須</span>
+            </div>
+            <div class="input">
+            <%= form.email_field :email, class: 'form-control', value: @email, placeholder: "example@example.com" %>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="nav-phone">
+            <%= form.label :phone_number, '電話番号' %>
+            <span class="required-label">必須</span>
+            </div>
+            <div class="input">
+            <%= form.text_field :phone_number, class: 'form-control',value: @phone_number, placeholder: "000-1234-5678" %>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="nav-email">
+            <%= form.label :select,'コース選択' %>
+            <span class="required-label">必須</span>
+            </div>
+            <div class="input">
+                <%= form.select :category, ['個性カウンセリング', '心のメンテナンス', '個性&心のメンテナンス'], {}, class: 'form-control',value: @category %>
+
+            </div>
+        </div>
+
+            <div class="submit">
+                <%= form.hidden_field :start_time, value: @start_time %>
+                <%= form.submit value: '予約確認画面へ', class: 'btn btn-primary mx-auto d-block' %>
+            
+             </div>
+
+        <% end %>
+        
+    
+</div>

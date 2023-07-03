@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :reservations,only:[:index]
+  resources :reservations do
+    collection do
+      post "confirm"
+      post "back"
+    end
+  end
+  
 
   root to: "saikas#index"
   
@@ -11,5 +17,4 @@ Rails.application.routes.draw do
       get "service"
     end
   end
-
 end

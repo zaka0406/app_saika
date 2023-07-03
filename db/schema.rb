@@ -10,16 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_06_21_234144) do
+ActiveRecord::Schema.define(version: 2023_06_30_082417) do
 
   create_table "reservations", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.date "day", null: false
     t.string "time", null: false
-    t.bigint "user_id", null: false
     t.datetime "start_time", null: false
+    t.string "name", null: false
+    t.string "email", null: false
+    t.string "phone_number", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_reservations_on_user_id"
+    t.string "category"
   end
 
   create_table "saikas", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|

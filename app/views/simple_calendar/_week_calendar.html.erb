@@ -38,6 +38,15 @@
           <td><%= time %></td>
           <% week.each do |day| %>
           <td>
+           <!-- 追加 -->
+                <!-- ここから -->
+                <% if check_reservation(@reservations, day, time, @name, @email, @phone_number) %>
+                  <%= '×' %>
+                <% else %>
+                  <%# <%= link_to"○",new_reservation_paths %>
+                  <%= link_to "○", new_reservation_path(day: day, time: time) %>
+                <% end %>
+                <!-- ここまで -->
           </td>
           <% end %>    
         </tr>

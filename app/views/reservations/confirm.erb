@@ -1,0 +1,36 @@
+<div class="reservation">
+    <h1 class="reservation-title">予約確認画面</h1>
+
+ 
+ <dl class="confirm_list">
+	<dt class="confirm_nav">【希望日時】
+    <span class="confirm_fixed"><%= @reservation.day %></span>
+    </dt>
+    <dt class="confirm_nav">【希望時間】
+    <span class="confirm_fixed"><%= @reservation.time %></span>
+    </dt>
+	<dt class="confirm_nav">【名前】
+    <span class="confirm_fixed"><%= @reservation.name %></span>
+    </dt>
+    <dt class="confirm_nav">【メールアドレス】
+    <span class="confirm_fixed"><%= @reservation.email %></span>
+    </dt>
+	<dt class="confirm_nav">【電話番号】
+    <span class="confirm_fixed"><%= @reservation.phone_number %></span>
+    </dt>
+    <dt class="confirm_nav">【選択コース】
+    <span class="confirm_fixed"><%= @reservation.category %></span>
+    </dt>
+	
+  </dl>
+
+    <div class="confirm_submit">
+        <%= form_with model: @reservation, url: back_reservations_path,local: true do |form| %>
+        <%= form.submit '入力画面に戻る' %>
+        <% end %>
+    
+        <%= form_with model: @reservation, url: reservations_path,local: true do |form| %>
+	    <%= form.submit '送信する' %>
+        <% end %>
+    </div>
+</div>
