@@ -1,0 +1,15 @@
+<div class="reservation">
+  <h1 class="reservation-title">予約一覧</h1>
+
+  <% @reservations.each do |reservation| %>
+  <ul class="reservations-list">
+    <li class="reservations-daytime"><%= reservation.day %></li>
+    <li class="reservations-daytime"><%= reservation.time %></li>
+    <li class="reservations-list-nav"><%= button_to "修正", edit_reservation_path(reservation),method: :get %></li>
+    <li class="reservations-list-nav">
+      <%= button_to "削除", reservation_path(reservation), method: :delete,class: "btn btn-reservation" %>
+    </li>
+    </ul>
+  <% end %>
+ 
+</div>

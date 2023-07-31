@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
   <head>
     <title>SAIKA</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -8,7 +8,6 @@
     <% csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%# <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body class = "main">
@@ -41,6 +40,11 @@
         </li>
         <li class="content">
           <%= link_to"ご予約", reservations_path %>
+          <ul class="dropdown__lists">
+              <li class="dropdown__list">
+                <%= link_to "予約確認", check_reservations_path %>
+              </li>
+          </ul>
         </li>
         <li class content>
          <a href="https://instagram.com/chihiro_851?igshid=MzNlNGNkZWQ4Mg==" target="_blank">
@@ -50,6 +54,12 @@
       </ul>
     </header>
 
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+ 
     <div class="contents">
       <%= yield %>
     </div>
@@ -67,7 +77,8 @@
     </footer>
   </body>
 
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="index.js"></script>
+  <%# <script src="index.js"></script> %>
   
 </html>

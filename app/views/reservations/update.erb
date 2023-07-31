@@ -1,0 +1,11 @@
+<div class="reservation">
+    <h1 class="reservation-title">ご予約ありがとうございました</h1>
+    <p class="resevation-coment">下記にて修正を受け付けました</p>
+
+    <%= render partial: "confirm", locals: { reservation: @reservation} %>
+
+    <div class="retrun">
+    <%= link_to"戻る" ,saikas_path %>
+    </div>
+
+</div>

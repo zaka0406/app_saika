@@ -1,0 +1,13 @@
+<div class="reservation">
+    <div class="reservation-nav">
+        <h1 class="reservation-title">管理者画面</h1>
+        </div>
+
+
+   <div class="calendar">
+      <%= week_calendar events: @reservations do |date, reservations| %>
+        <%= date.day %>
+      <% end %>
+   </div>
+    
+</div>

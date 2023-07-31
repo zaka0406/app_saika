@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_06_30_082417) do
+ActiveRecord::Schema.define(version: 2023_07_20_052021) do
 
   create_table "reservations", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.date "day", null: false
@@ -25,11 +25,11 @@ ActiveRecord::Schema.define(version: 2023_06_30_082417) do
   end
 
   create_table "saikas", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "name"
-    t.string "text"
-    t.text "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.date "day"
+    t.string "time"
+    t.datetime "start_time"
   end
 
 end

@@ -53,26 +53,23 @@ table.table.table-striped {
 
   // 新規予約入力画面
   .nav{
-    margin: 10px 250px 10px 0;
+    width: 300px;
+    margin: 10px auto;
+    text-align: left;
  
   }
 
-  .nav-email{
-    margin: 10px 180px 10px 0;
-  }
-
-  .nav-phone{
-    margin: 10px 220px 10px 0;
-  }
 
   .required-label{
+    vertical-align: middle;
+    margin-left: 5px;
     font-size: 8px;
-    background-color: deeppink;
+    background-color: red;
     color: #f5f5f5;
     border-radius:2px;
   }
 
-  .form-control ,#reservation_categorys{
+  .form-control ,#reservation_category{
     // margin-right: 25%;
     width: 300px;
     height: 30px;
@@ -90,7 +87,7 @@ table.table.table-striped {
   .confirm_list {
     width: 600px;
     text-align: left;
-    margin: 0 400px;
+    margin: 30px 400px;
   }
 
   .confirm_nav{
@@ -123,3 +120,58 @@ table.table.table-striped {
     color         : #000066;     /* 背景色     */
     background    : #ffffff;     /* 文字色     */
   }
+
+  .error-messages{
+    width: 300px;
+    text-align: left;
+    margin: 20px auto;
+    color: red;
+    font-weight: bold;
+  }
+
+  ul{
+    padding-left:0;
+  }
+  
+  .error{
+    list-style:none;
+    margin: 10px;
+  }
+
+  .edit{
+    margin-top: 30px;
+  }
+
+  // 予約一覧
+  .reservations-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 20px auto;
+    width: 800px;
+    padding-left: 120px;
+  }
+
+  .reservations-daytime {
+    margin: 30px 20px 0 ;
+    font-size: 40px;
+  }
+
+  .reservations-list-nav{
+     margin-left: 50px;
+  }
+
+  // キャンセル時の表記
+  /* 成功メッセージ */
+.flash {
+  background-color: #c8e6c9;
+  color: #2e7d32;
+  padding: 10px;
+  margin: 100px;
+  height: 30px;
+  font-size: 30px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+
