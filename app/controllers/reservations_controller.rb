@@ -1,5 +1,6 @@
 class ReservationsController < ApplicationController
     before_action :set_reservation, only: [:edit]
+    
 
     def index
         @reservations = Reservation.all.where("day >= ?", Date.current).where("day < ?", Date.current >> 1).order(day: :desc)
@@ -54,6 +55,8 @@ class ReservationsController < ApplicationController
         @reservations = Reservation.where(name: params[:name], email: params[:email], phone_number: params[:phone_number])
                         .where("day >= ?", Date.current)
                         .order(day: :desc)
+
+        @reservations = Reservation.find(params[:id])
     end
 
     def no_reservation
@@ -63,13 +66,16 @@ class ReservationsController < ApplicationController
     end
     
     def create
-        @reservation = Reservation.new(session[:reservation])
-        if @reservation.save
-     
-        else
-            render :new
-        end
+      @reservation = Reservation.new(session[:reservation])
+    
+      if @reservation.save
+        ReservationMailerJob.perform_later(@reservation) # メール送信ジョブをキューに追加
+        
+      else
+        render :new
+      end
     end
+    
    
     def update
         @reservation = Reservation.find(params[:id])
@@ -81,8 +87,18 @@ class ReservationsController < ApplicationController
       
         # start_time を設定する
         @reservation.start_time = start_time
-        @reservation.save
-    
+
+       # 保存が成功したかどうかを確認
+        if @reservation.save
+          EditReservationMailerJob.perform_later(@reservation) 
+          # 修正が成功した場合、メール送信ジョブをキューに追加
+       # 保存に成功した場合の処理
+        
+         else
+        # 保存に失敗した場合の処理
+         render :edit
+        end
+
       end
        
       

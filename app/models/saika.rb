@@ -12,4 +12,6 @@ class Saika < ApplicationRecord
         end
         saika_data
     end
+
+    
 end      

@@ -1,4 +1,5 @@
 class Reservation < ApplicationRecord
+  before_save :check_available_date
 
     def self.reservations_after_month
         # 今日から1ヶ月先までのデータを取得
@@ -21,5 +22,13 @@ class Reservation < ApplicationRecord
       validates :phone_number, presence: true
       validates :category, presence: true
       
+      validate :check_available_date
+
+      def check_available_date
+        if day.present? && (Reservation.where(day: day).exists? || Saika.where(day: day).exists?)
+          errors.add(:day,'は選択できません')
+          throw(:abort) # バリデーションエラーが発生した場合、データの保存を中止する
+        end
+      end
     
 end

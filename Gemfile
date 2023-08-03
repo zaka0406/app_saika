@@ -61,3 +61,5 @@ gem 'rails-i18n'
 gem 'holidays'
 
 gem 'rails_admin'
+
+gem 'sidekiq'
