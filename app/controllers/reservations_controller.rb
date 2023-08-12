@@ -17,6 +17,7 @@ class ReservationsController < ApplicationController
         @category = params[:category]
         session[:selected_category] = params[:category]
         @start_time = DateTime.parse(@day + " " + @time + " " + "JST")
+        
        end
 
     def back
@@ -52,11 +53,11 @@ class ReservationsController < ApplicationController
       
   
     def show
-        @reservations = Reservation.where(name: params[:name], email: params[:email], phone_number: params[:phone_number])
+        @reservation = Reservation.where(name: params[:name], email: params[:email], phone_number: params[:phone_number])
                         .where("day >= ?", Date.current)
                         .order(day: :desc)
 
-        @reservations = Reservation.find(params[:id])
+        @reservation = Reservation.find(params[:id])
     end
 
     def no_reservation
@@ -107,7 +108,12 @@ class ReservationsController < ApplicationController
       def destroy
         @reservation = Reservation.find(params[:id])
         if @reservation.destroy
+          # DeletionReservationMailerJob.perform_later(@reservation) # メール送信ジョブをキューに追加
+          SaikaMailer.deletion_send_mail(@reservation).deliver_now
+          SaikaMailer.deletion_admin_mail(@reservation).deliver_now
+          
           flash[:notice] = "予約は削除されました"
+
         else
           flash[:alert] = "予約の削除に失敗しました"
         end

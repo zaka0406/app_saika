@@ -1,4 +1,3 @@
-# app/jobs/reservation_mailer_job.rb
 class ReservationMailerJob < ApplicationJob
     queue_as :default
   
@@ -6,5 +5,7 @@ class ReservationMailerJob < ApplicationJob
       SaikaMailer.send_mail(reservation).deliver_now
       SaikaMailer.admin_mail(reservation).deliver_now
     end
+
+    
   end
   

@@ -23,5 +23,17 @@ class SaikaMailer < ApplicationMailer
         @reservation = reservation
         mail(to: 'zaka0406@gmail.com', subject: '予約が修正されました')
       end
+
+        # キャンセル用
+        def deletion_send_mail(reservation)
+          @reservation = reservation
+          mail(to: reservation.email, subject: '予約のキャンセルを承りました')
+        end
+  
+        #  修正用　管理者へ通知
+        def deletion_admin_mail(reservation)
+          @reservation = reservation
+          mail(to: 'zaka0406@gmail.com', subject: '予約がキャンセルされました')
+        end
     
 end

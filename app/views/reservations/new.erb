@@ -18,7 +18,8 @@
                 <%= form.label :day, '日付<span class="required-label">必須</span>'.html_safe %>
             </div>
             <div class="input">
-                <%= form.text_field :day, class: 'form-control', value: @day %>
+                <%= form.text_field :day, class: 'form-control', value: @day,readonly: true  %>
+         
             </div>
         </div>
         <div class="form-group">
@@ -26,7 +27,8 @@
                 <%= form.label :time, '時間<span class="required-label">必須</span>'.html_safe %>
             </div>
             <div class="input">
-                <%= form.text_field :time, class: 'form-control', value: @time %>
+                <%= form.text_field :time, class: 'form-control', value: @time,readonly: true  %>
+          
             </div>
         </div>
         <div class="form-group">
@@ -35,6 +37,7 @@
             </div>
             <div class="input">
                 <%= form.text_field :name, class: 'form-control', value: @name, placeholder: "お名前を入力" %>
+             
             </div>
         </div>
         
