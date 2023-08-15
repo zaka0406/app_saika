@@ -22,53 +22,50 @@ class Reservation < ApplicationRecord
       validates :category, presence: true
 
 
-        validate :valid_time_selection, on: :update
-        validate :no_booking_at_10_if_data_present, on: :update
-        validate :no_booking_at_14_if_data_present, on: :update
-        validate :booking_allowed_if_other_slot_available, on: :update
-        validate :modification_allowed_within_2_days, on: :update
+       validate :modification_allowed_within_2_days, on: :update
       
             
-        private
+        private  
       
-        def valid_time_selection
-          unless ['10:00', '14:00'].include?(time) && !new_record?
-            errors.add(:time, 'は10時か14時を選択してください') 
-          end
-        end
-      
-        def no_booking_at_10_if_data_present
-          if time == '10' && Reservation.exists?(day: day, time: '10') && !new_record?
-            errors.add(:time, 'はすでに予約されています')
-          end
-        end
-      
-        def no_booking_at_14_if_data_present
-          if time == '14' && Reservation.exists?(day: day, time: '14') && !new_record?
-            errors.add(:time, 'はすでに予約されています')
-          end
-        end
-      
-        def booking_allowed_if_other_slot_available
-          if time == '10' && Reservation.exists?(day: day, time: '14') && !new_record?
-            errors.add(:time, 'は14時に空きがある場合のみ予約できます')
-          elsif time == '14' && Reservation.exists?(day: day, time: '10') && !new_record?
-            errors.add(:time, 'は10時に空きがある場合のみ予約できます')
-          end
-        end
+     
       
         def modification_allowed_within_2_days
           if day.present? && day <= 2.days.from_now.to_date
             errors.add(:day, 'は2日前までしか修正できません')
           end
         end
+
+        # validate :no_duplicate_reservations, on: :update
+
+        # private
       
-        validate :no_duplicate_time_slot, on: :create
+        # def no_duplicate_reservations
+        #   if Reservation.exists?(day: day, time: '10:00') || Saika.exists?(day: day, time: '10:00')
+        #     errors.add(:base, '10時の予約が既に存在します')
+        #   end
+      
+        #   if Reservation.exists?(day: day, time: '14:00') || Saika.exists?(day: day, time: '14:00')
+        #     errors.add(:base, '14時の予約が既に存在します')
+        #   end
+        # end
 
-        def no_duplicate_time_slot
-          if Reservation.exists?(day: day, time: ['10:00', '14:00']) || Saika.exists?(day: day, time: ['10:00', '14:00'])
-            errors.add(:base, '10時または14時の予約が既に存在します')
+        
+          validate :no_duplicate_reservation_at_10, on: :update
+          validate :no_duplicate_reservation_at_14, on: :update
+        
+          private
+        
+          def no_duplicate_reservation_at_10
+            if time == '10:00' && (Reservation.exists?(day: day, time: '10:00')|| Saika.exists?(day: day, time: '10:00'))
+              errors.add(:time, 'はすでに予約されています')
+            end
           end
-        end
 
-end
+          def no_duplicate_reservation_at_14
+            if time == '14:00' && (Reservation.exists?(day: day, time: '14:00')|| Saika.exists?(day: day, time: '14:00'))
+              errors.add(:time, 'はすでに予約されています')
+            end
+          end
+        
+        
+  end

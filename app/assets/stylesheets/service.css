@@ -50,3 +50,56 @@
 .menu-nav-time,.menu-nav-price{
     color: #555555;
 }
+
+/* スマホサイズ用の設定 */
+@media (max-width: 480px) {
+    .product {
+      margin: 50px auto 0; /* マージン調整 */
+    }
+
+    .menu-contents{
+      background-color: aliceblue;
+    }
+  
+    .product-title {
+      font-size: 36px; /* フォントサイズ調整 */
+      margin-top: 80px; /* マージン調整 */
+      padding-top: 20px;
+    }
+  
+    .product-menu {
+      margin: 5px 0 10px; /* マージン調整 */
+    }
+  
+    .menu-image {
+      margin: 20px 0; /* マージン調整 */
+      display: block; 
+      text-align: center;
+
+    }
+  
+    .menu-nav {
+      padding-top: 30px; /* パディング調整 */
+      margin-left: 20px; /* マージン調整 */
+    }
+  
+    .menu-nav-name {
+      font-size: 20px; /* フォントサイズ調整 */
+      line-height: 30px; /* 行の高さ調整 */
+    }
+  
+    .menu-nav-contents {
+      font-size: 14px; /* フォントサイズ調整 */
+      line-height: 18px; /* 行の高さ調整 */
+    }
+  
+    .menu-nav-time,
+    .menu-nav-price {
+      font-size: 12px; /* フォントサイズ調整 */
+    }
+
+    .service-kyames {
+      margin: 0 auto;
+    }
+  }
+  

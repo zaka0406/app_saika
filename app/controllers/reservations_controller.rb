@@ -34,6 +34,7 @@ class ReservationsController < ApplicationController
         if @reservation.invalid?
            render :new
         end
+
     end
 
     def check
@@ -57,7 +58,8 @@ class ReservationsController < ApplicationController
                         .where("day >= ?", Date.current)
                         .order(day: :desc)
 
-        @reservation = Reservation.find(params[:id])
+        # @reservation = Reservation.find(params[:id])
+        # render partial: 'confirm', locals: { reservation: @reservation }
     end
 
     def no_reservation
