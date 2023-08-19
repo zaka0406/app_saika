@@ -27,6 +27,11 @@
   a,p,h1,h2{
     color:#555555;
   }
+  input, textarea {
+    color: #555555;
+    font-family: Arial, sans-serif; /* 字体（フォント） */
+    /* 他のスタイルプロパティを追加 */
+  }
   
   /* ヘッダー部分 */
   .header{
@@ -226,6 +231,22 @@
           margin-top: 20px;
         }
 
+        /* ログイン画面 */
+        .contents{
+          text-align: center;
+          margin-top: 100px;
+        }
+
+        .field{
+          margin: 20px 0 20px;
+          border-radius: 5px;
+          border: inset;
+        }
+
+        .label{
+          padding-right: 90px;
+          margin-bottom: 5px;
+        }
   
         /* スマホ対応 */
   
@@ -460,6 +481,10 @@
     height: 40px; /* スマホ用の高さ */
     text-align: center;
     margin-top: 10px; /* スマホ用のマージン */
+  }
+
+  .flash{
+    font-size: 25px;
   }
   
         }

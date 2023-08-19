@@ -65,3 +65,7 @@ gem 'rails_admin'
 gem 'sidekiq'
 
 # gem 'redis'
+
+gem 'devise'
+
+gem 'cancancan'

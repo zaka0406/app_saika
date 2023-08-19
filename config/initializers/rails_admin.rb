@@ -1,4 +1,10 @@
 RailsAdmin.config do |config|
+  config.authenticate_with do
+    authenticate_or_request_with_http_basic('Site Message') do |username, password|
+      username == 'saika0312@gmail.com' && password == 'harusora0312'
+    end
+  end
+
   config.asset_source = :webpacker
   config.main_app_name = ['Reservation', 'Admin']
   
@@ -63,6 +69,13 @@ RailsAdmin.config do |config|
       end
   end
 
+## == Devise ==
+config.authenticate_with do
+  warden.authenticate! scope: :user
+end
+config.current_user_method(&:current_user)
 
+ ## == Cancan ==
+#  config.authorize_with :cancan
   
 end
