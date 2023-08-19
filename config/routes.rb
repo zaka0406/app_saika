@@ -8,8 +8,6 @@ Rails.application.routes.draw do
       get "check"
       get "no_reservation"
       post "search"
-
-
     end
 
   end
@@ -26,4 +24,11 @@ Rails.application.routes.draw do
 
     end
   end
-end
+
+  resources :contact, only: [:new, :create] do
+    collection do
+      post "confirm"
+      get "back"
+    end
+  end
+end  

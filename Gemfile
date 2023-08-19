@@ -63,3 +63,5 @@ gem 'holidays'
 gem 'rails_admin'
 
 gem 'sidekiq'
+
+# gem 'redis'

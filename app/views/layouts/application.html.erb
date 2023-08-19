@@ -22,19 +22,28 @@
          <%= link_to "SAIKA",saikas_path %>
         </h1>
       </div>
+
           <!-- ハンバーガーメニューアイコン -->
-      <div class="menu-icon">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+        <div class="burger-btn">
+            <span class="bar bar_top "></span>
+            <span class="bar bar_middle "></span>
+            <span class="bar bar_bottom "></span>
+        </div>
+
+      <script>
+       $(document).ready(function(){
+    $(`.burger-btn`).on("click",function(){
+        $(`.burger-btn`).toggleClass(`cross`);
+        $(`.contents-nav`).fadeToggle(100);
+    })
+})
+
+      </script>
 
       <ul class="contents-nav">
         <li class="content">
           <%= link_to "about",about_saikas_path %>
         </li>
-        <li class="content">
-        <ul class="contents-nav">
         <li class="content">
           <%= link_to "serivce",service_saikas_path %>
         </li>
@@ -45,7 +54,7 @@
           <a href="https://ameblo.jp/chi-harusora">blog</a>
         </li>
         <li class="content">
-          <a href="#">contact</a>
+          <%= link_to "contact", new_contact_path %>
         </li>
         <li class="content">
           <%= link_to"ご予約", reservations_path %>

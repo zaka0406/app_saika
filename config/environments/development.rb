@@ -41,11 +41,16 @@ Rails.application.configure do
     address:              'smtp.gmail.com',
     domain:               'smtp.gmail.com',
     user_name:            'zaka0406@gmail.com',
+                          # ENV['SMTP_USERNAME'],
     password:             'uxedhifdmedxvxig',
+                          # ENV['SMTP_PASSWORD'],
     authentication:       'login',
     enable_starttls_auto: true
   }
   config.action_mailer.perform_caching = false
+  config.action_mailer.logger = ActiveSupport::Logger.new("log/mail.log")
+  config.action_mailer.logger.level = :debug
+
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

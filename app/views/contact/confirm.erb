@@ -1,0 +1,30 @@
+<div class="reservation">
+    <h1 class="reservation-title">お問い合わせ確認画面</h1>
+
+ 
+ <dl class="confirm_list">
+	<dt class="confirm_nav">【名前】
+    <span class="confirm_fixed"><%= @contact.name %></span>
+    </dt>
+    <dt class="confirm_nav">【メールアドレス】
+    <span class="confirm_fixed"><%= @contact.email %></span>
+    </dt>
+	<dt class="confirm_nav">【電話番号】
+    <span class="confirm_fixed"><%= @contact.phone_number %></span>
+    </dt>
+    <dt class="confirm_nav">【お問い合わせ内容】
+    <span class="confirm_fixed"><%= @contact.message %></span>
+    </dt>
+	
+  </dl>
+
+    <div class="confirm_submit">
+        <%= form_with model: @contact, url: back_contact_index_path, method: :get, local: true do |form| %>
+        <%= form.submit '入力画面に戻る' %>
+        <% end %>
+    
+        <%= form_with model: @contact, url: contact_index_path, local: true do |form| %>
+	    <%= form.submit '送信する' %>
+        <% end %>
+    </div>
+</div>

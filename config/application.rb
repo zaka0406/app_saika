@@ -19,5 +19,12 @@ module AppSaika
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
     config.i18n.default_locale = :ja
+    # config.active_job.queue_adapter = :sidekiq
+    # config.active_job.queue_name_prefix = "app_saika_#{Rails.env}"
+    # config.cache_store = :redis_cache_store, {
+    #   url: "redis://localhost:6379/0", # Redisのホストとポートを適切に設定
+    #   namespace: "app_saika_#{Rails.env}" # 必要に応じて名前空間を設定
+    # }
+
   end
 end

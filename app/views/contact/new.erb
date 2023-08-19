@@ -1,0 +1,67 @@
+<div class="reservation">
+    <h1 class="reservation-title">お問い合わせ</h1>
+
+   
+        <%= form_with model: @contact, url: confirm_contact_index_path, class: 'form' do |form| %>
+            <% if @contact.errors.any? %>
+                <div class="error-messages">
+                    <ul>
+                        <% @contact.errors.full_messages.each do |message| %>
+                        <li class="error"><%= message %></li>
+                        <% end %>
+                    </ul>
+                </div>
+            <% end %>
+
+   
+   
+        <div class="form-group">
+            <div class="nav">
+                <%= form.label :name, '名前<span class="required-label">必須</span>'.html_safe %>
+            </div>
+            <div class="input">
+                <%= form.text_field :name, class: 'form-control', value: @name, placeholder: "お名前を入力" %>
+             
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="nav">
+               <%= form.label :email, 'emailアドレス<span class="required-label">必須</span>'.html_safe %>
+            </div>
+            <div class="input">
+                <%= form.email_field :email, class: 'form-control',value: @email, placeholder: "example@example.com" %>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="nav">
+               <%= form.label :phone_number, '電話番号<span class="required-label">必須</span>'.html_safe %>
+            </div>
+            <div class="input">
+                <%= form.text_field :phone_number, class: 'form-control',value: @phone_number, placeholder: "000-1234-5678" %>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="nav">
+                <%= form.label :select, 'お問い合わせ内容<span class="required-label">必須</span>'.html_safe %>
+
+            </div>
+            <div class="input">
+               <%= form.text_area :message, size: '20x20', class: 'form-text',value: @message, placeholder: "こちらに内容をご記入ください" %>
+            </div>
+        </div>
+
+            <div class="submit">
+                <%= form.submit value: '問い合わせ確認画面へ', class: 'btn btn-primary mx-auto d-block' %>
+            
+             </div>
+
+        <% end %>
+        
+    <div class="retrun">
+    <%= link_to"戻る" ,saikas_path %>
+    </div>
+
+</div>

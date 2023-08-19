@@ -2,7 +2,7 @@ module ReservationsHelper
     def times 
         times= [
             "10:00",
-            "14:00",
+            "13:00",
             ]
     end
     

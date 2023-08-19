@@ -58,8 +58,6 @@ class ReservationsController < ApplicationController
                         .where("day >= ?", Date.current)
                         .order(day: :desc)
 
-        # @reservation = Reservation.find(params[:id])
-        # render partial: 'confirm', locals: { reservation: @reservation }
     end
 
     def no_reservation
@@ -110,7 +108,6 @@ class ReservationsController < ApplicationController
       def destroy
         @reservation = Reservation.find(params[:id])
         if @reservation.destroy
-          # DeletionReservationMailerJob.perform_later(@reservation) # メール送信ジョブをキューに追加
           SaikaMailer.deletion_send_mail(@reservation).deliver_now
           SaikaMailer.deletion_admin_mail(@reservation).deliver_now
           
