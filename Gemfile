@@ -75,5 +75,4 @@ gem 'dotenv-rails'
 
 group :production do
   gem 'pg'
-  gem 'dotenv-rails'
 end
