@@ -52,8 +52,6 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'dotenv-rails'
-
 gem "simple_calendar", "~> 2.4"
 
 gem 'rails-i18n'
@@ -64,7 +62,6 @@ gem 'rails_admin'
 
 gem 'sidekiq'
 
-gem 'redis'
 
 gem 'devise'
 
@@ -76,4 +73,5 @@ gem 'gretel'
 
 group :production do
   gem 'pg'
+  gem 'dotenv-rails'
 end
