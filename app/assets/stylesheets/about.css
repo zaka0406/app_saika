@@ -6,8 +6,7 @@
     height: 400px;
     width: 500px;
     border-radius: 20%;
-    margin: 100px auto 20px auto;
- 
+    margin: 20px auto 20px auto;
     animation-name: fade;
     animation-duration: 2s;
 }

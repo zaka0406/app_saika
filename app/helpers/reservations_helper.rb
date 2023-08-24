@@ -1,8 +1,8 @@
 module ReservationsHelper
     def times 
         times= [
-            "10:00",
-            "13:00",
+            "10:00～",
+            "13:00～",
             ]
     end
     
@@ -24,7 +24,6 @@ module ReservationsHelper
       return result
     end
 
-   
 
     # require 'holidays'
 

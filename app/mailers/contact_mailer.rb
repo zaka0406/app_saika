@@ -8,7 +8,7 @@ class ContactMailer < ApplicationMailer
       #  管理者へ通知
       def contact_admin_mail(contact)
         @contact = contact
-        mail(to: 'zaka0406@gmail.com', subject: 'お問い合わせがありました')
+        mail(to: 'saikachihiro.3588@gmail.com', subject: 'お問い合わせがありました')
       end
 
 end

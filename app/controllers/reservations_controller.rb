@@ -17,6 +17,10 @@ class ReservationsController < ApplicationController
         @category = params[:category]
         session[:selected_category] = params[:category]
         @start_time = DateTime.parse(@day + " " + @time + " " + "JST")
+        # @start_time = DateTime.parse(@day.to_s + " " + @time.to_s + " " + "JST")
+        # @start_time = DateTime.parse(@day.to_s + " " + @time.gsub("～", "") + " JST")
+
+
         
        end
 

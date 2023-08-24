@@ -4,7 +4,6 @@
 
 // ご予約画面
 .reservation{
-    margin-top: 100px;
     text-align: center;
 }
 
@@ -154,7 +153,7 @@ table.table.table-striped {
 
   .reservations-daytime {
     margin: 30px 20px 0 ;
-    font-size: 40px;
+    font-size: 20px;
   }
 
   .reservations-list-nav{
@@ -199,5 +198,21 @@ table.table.table-striped {
   .reservations-list{
     display: block;
     font-size: 20px;
+    width: 300px;
+    padding-left: 100px;
+  }
+
+  .reservations-daytime{
+    margin: 30px 0;
+    text-align: center;
+    width: 200px;
+  }
+
+  .reservations-list-coments{
+    font-size: 15px;
+    line-height: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+    padding-right: 90px;
   }
 }

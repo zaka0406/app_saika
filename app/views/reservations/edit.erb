@@ -27,7 +27,7 @@
                 <%= form.label :time, '時間<span class="required-label">必須</span>'.html_safe %>
             </div>
            <div class="input">
-                <%= form.select :time, options_for_select(['10:00', '13:00'], selected: @reservation.time), {include_blank: '選択してください'}, class: 'form-control' %>
+                <%= form.select :time, options_for_select(['10:00～', '13:00～'], selected: @reservation.time), {include_blank: '選択してください'}, class: 'form-control' %>
             </div>
             <div class="form-group">
             <div class="nav">
@@ -73,5 +73,7 @@
              </div>
 
         <% end %>
+
+        
        
 </div>

@@ -47,11 +47,11 @@
         <li class="content">
           <%= link_to "serivce",service_saikas_path %>
         </li>
-        <li class="content">
-          <a href="https://www.camesjapan.com/">キャメスとは</a>
+       <li class="content">
+        <a href="https://www.camesjapan.com/" target="_blank">キャメスとは</a>
         </li>
         <li class="content">
-          <a href="https://ameblo.jp/chi-harusora">blog</a>
+          <a href="https://ameblo.jp/chi-harusora" target="_blank">blog</a>
         </li>
         <li class="content">
           <%= link_to "contact", new_contact_path %>
@@ -79,8 +79,11 @@
         <%= flash[:notice] %>
       </div>
     <% end %>
+
  
+
     <div class="contents">
+      <%= breadcrumbs separator: " &rsaquo; " %> 
       <%= yield %>
     </div>
 

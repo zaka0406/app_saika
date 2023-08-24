@@ -7,7 +7,10 @@
       <li class="reservations-daytime"><%= reservation.time %></li>
       <%# もし予約日の2日前の場合は？というコード %>
       <% if reservation.day <= 2.days.from_now.to_date %>
-        <li class="reservations-list-nav">予約の修正・キャンセルはお電話にて承ります。<br>電話番号:09012345678</li>
+        <div class="reservations-list-coments">【ご予約の変更やキャンセル】<br>こちらのQRコードから<br>お願い申し上げます。</div>
+        <li class="reservations-list-nav"> 
+          <%= qrcode %>
+        </li>
       
       <% else %>
         <li class="reservations-list-nav"><%= button_to "修正", edit_reservation_path(reservation), method: :get %></li>

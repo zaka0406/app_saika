@@ -69,3 +69,8 @@ gem 'sidekiq'
 gem 'devise'
 
 gem 'cancancan'
+
+gem "rqrcode", "~> 2.0"
+
+gem 'gretel'
+

@@ -9,7 +9,7 @@ class SaikaMailer < ApplicationMailer
       #  管理者へ通知
       def admin_mail(reservation)
         @reservation = reservation
-        mail(to: 'zaka0406@gmail.com', subject: '予約が入りました')
+        mail(to: 'saikachihiro.3588@gmail.com', subject: '予約が入りました')
       end
 
       # 修正用
@@ -21,7 +21,7 @@ class SaikaMailer < ApplicationMailer
       #  修正用　管理者へ通知
       def edit_admin_mail(reservation)
         @reservation = reservation
-        mail(to: 'zaka0406@gmail.com', subject: '予約が修正されました')
+        mail(to: 'saikachihiro.3588@gmail.com', subject: '予約が修正されました')
       end
 
         # キャンセル用
@@ -33,7 +33,7 @@ class SaikaMailer < ApplicationMailer
         #  修正用　管理者へ通知
         def deletion_admin_mail(reservation)
           @reservation = reservation
-          mail(to: 'zaka0406@gmail.com', subject: '予約がキャンセルされました')
+          mail(to: 'saikachihiro.3588@gmail.com', subject: '予約がキャンセルされました')
         end
     
 end

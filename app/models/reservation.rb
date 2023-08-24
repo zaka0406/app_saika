@@ -39,13 +39,13 @@ class Reservation < ApplicationRecord
           private
         
           def no_duplicate_reservation_at_10
-            if time == '10:00' && (Reservation.exists?(day: day, time: '10:00')|| Saika.exists?(day: day, time: '10:00'))
+            if time == '10:00～' && (Reservation.exists?(day: day, time: '10:00～')|| Saika.exists?(day: day, time: '10:00～'))
               errors.add(:time, 'はすでに予約されています')
             end
           end
 
           def no_duplicate_reservation_at_14
-            if time == '13:00' && (Reservation.exists?(day: day, time: '13:00')|| Saika.exists?(day: day, time: '13:00'))
+            if time == '13:00～' && (Reservation.exists?(day: day, time: '13:00～')|| Saika.exists?(day: day, time: '13:00～'))
               errors.add(:time, 'はすでに予約されています')
             end
           end
