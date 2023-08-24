@@ -74,3 +74,6 @@ gem "rqrcode", "~> 2.0"
 
 gem 'gretel'
 
+group :production do
+  gem 'pg'
+end

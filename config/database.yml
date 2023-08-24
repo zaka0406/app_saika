@@ -53,9 +53,13 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
+# production:
+#   <<: *default
+#   database: app_saika_production
+#   username: app_saika
+#   password: <%= ENV['APP_SAIKA_DATABASE_PASSWORD'] %>
+  
 production:
   <<: *default
-  database: app_saika_production
-  username: app_saika
-  password: <%= ENV['APP_SAIKA_DATABASE_PASSWORD'] %>
-  
+  adapter: postgresql
+  url: <%= ENV['DATABASE_URL'] %>
