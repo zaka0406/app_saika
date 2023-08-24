@@ -64,7 +64,7 @@ gem 'rails_admin'
 
 gem 'sidekiq'
 
-# gem 'redis'
+gem 'redis'
 
 gem 'devise'
 
