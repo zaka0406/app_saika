@@ -71,6 +71,8 @@ gem "rqrcode", "~> 2.0"
 
 gem 'gretel'
 
+gem 'dotenv-rails'
+
 group :production do
   gem 'pg'
   gem 'dotenv-rails'
