@@ -29,7 +29,8 @@ class ReservationsController < ApplicationController
         redirect_to new_reservation_path(day: @reservation.day, time: @reservation.time, name: @reservation.name, email: @reservation.email, phone_number: @reservation.phone_number, category: @reservation.category)
         session.delete(:reservation)
         return
-    end
+
+        end
       
 
     def confirm
@@ -49,25 +50,29 @@ class ReservationsController < ApplicationController
                                     .where("day >= ?", Date.current)
                                     .order(day: :desc)
 
-        if @reservations.present?
-          render :seach
+        editing_reservation_id = session[:editing_reservation_id]
+        if @reservations.present? || editing_reservation_id.present?
+          render :search
         else
           redirect_to no_reservation_reservations_path
         end
       end
       
   
-    def show
-        @reservation = Reservation.where(name: params[:name], email: params[:email], phone_number: params[:phone_number])
-                        .where("day >= ?", Date.current)
-                        .order(day: :desc)
-
-    end
+      def show
+        editing_reservation_id = session[:editing_reservation_id]
+        if editing_reservation_id.present?
+          @reservation = Reservation.find(editing_reservation_id)
+        end
+      end
+      
 
     def no_reservation
     end
     
     def edit
+      @reservation = Reservation.find(params[:id])
+      session[:editing_reservation_id] = @reservation.id
     end
     
     def create

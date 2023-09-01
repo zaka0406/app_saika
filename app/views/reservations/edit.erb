@@ -66,6 +66,10 @@
             </div>
         </div>
 
+    <div class="retrun">
+        <%= link_to"戻る" , reservation_path(@reservation) %>
+      </div>
+
             <div class="submit">
                 <%= form.hidden_field :start_time, value: @start_time %>
                 <%= form.submit value: '予約修正保存', class: 'btn btn-primary mx-auto d-block' %>

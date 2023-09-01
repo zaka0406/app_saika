@@ -1,0 +1,23 @@
+    <ul class="reservations-list">
+      <li class="reservations-daytime"><%= @reservation.day %></li>
+      <li class="reservations-daytime"><%= @reservation.time %></li>
+      <%# もし予約日の2日前の場合は？というコード %>
+      <% if reservation.day <= 2.days.from_now.to_date %>
+        <div class="reservations-list-coments">【ご予約の変更やキャンセル】<br>こちらのQRコードから<br>お願い申し上げます。</div>
+        <li class="reservations-list-nav"> 
+          <%= qrcode %>
+        </li>
+      
+      <% else %>
+        <li class="reservations-list-nav"><%= button_to "修正", edit_reservation_path(reservation), method: :get %></li>
+        <li class="reservations-list-nav">
+          <%= button_to "削除", reservation_path(reservation), method: :delete, class: "btn btn-reservation" %>
+        </li>
+      <% end %>
+    </ul>
+
+
+  <div class="retrun">
+    <%= link_to"戻る" , check_reservations_path %>
+  </div>
+    
