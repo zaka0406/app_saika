@@ -8,6 +8,14 @@ ja:
         category: コース選択
         day: 日付
         time: 予約時間
+ja:
+  activerecord:
+    attributes:
+      contact: 
+        name: 名前
+        email: メールアドレス
+        phone_number: 電話番号
+        message: お問い合わせ内容
 
   errors:
     models:

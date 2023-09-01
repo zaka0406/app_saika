@@ -1,17 +1,21 @@
-<dl class="confirm_list">
+
+ <dl class="confirm_list">
 	<dt class="confirm_nav">【名前】
-    <span class="confirm_fixed"><%= @contact.name %></span>
+        <span class="confirm_fixed"><%= @contact.name %></span>
     </dt>
     <dt class="confirm_nav">【メールアドレス】
-    <span class="confirm_fixed"><%= @contact.email %></span>
-    </dt>
+        <div class="confirm-nav">
+            <span class="confirm_fixed"><%= @contact.email %></span>
+        </div>
 	<dt class="confirm_nav">【電話番号】
-    <span class="confirm_fixed"><%= @contact.phone_number %></span>
+        <div class="confirm-nav">
+            <span class="confirm_fixed"><%= @contact.phone_number %></span>
+        </div>
     </dt>
     <dt class="confirm_nav">【お問い合わせ内容】
-    <div class="confirm-message">
-     <span class="confirm_fixed"><%= @contact.message %></span>
-    </div>
+        <div class="confirm-message">
+            <span class="confirm_fixed"><%= @contact.message %></span>
+        </div>
     </dt>
 	
   </dl>
