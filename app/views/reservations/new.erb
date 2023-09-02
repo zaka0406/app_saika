@@ -71,6 +71,17 @@
             </div>
         </div>
 
+             <div class="form-group">
+            <div class="nav">
+                <%= form.label :select, 'セッションタイプ<span class="required-label">必須</span>'.html_safe %>
+
+            </div>
+            <div class="input">
+               <%= form.select :selection, options_for_select(['オンライン','対面'], selected: session[:selected_selection]), {include_blank: '選択してください'}, class: 'form-control' %>
+            </div>
+        </div>
+
+
             <div class="submit">
                 <%= form.hidden_field :start_time, value: @start_time %>
                 <%= form.submit value: '予約確認画面へ', class: 'btn btn-primary mx-auto d-block' %>

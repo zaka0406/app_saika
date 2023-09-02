@@ -16,6 +16,8 @@ class ReservationsController < ApplicationController
         @phone_number = params[:phone_number]
         @category = params[:category]
         session[:selected_category] = params[:category]
+        @selection = params[:selection]
+        session[:selected_selection] = params[:selection]
         @start_time = DateTime.parse(@day + " " + @time + " " + "JST")
         # @start_time = DateTime.parse(@day.to_s + " " + @time.to_s + " " + "JST")
         # @start_time = DateTime.parse(@day.to_s + " " + @time.gsub("～", "") + " JST")
@@ -26,7 +28,7 @@ class ReservationsController < ApplicationController
 
     def back
         @reservation = Reservation.new(session[:reservation])
-        redirect_to new_reservation_path(day: @reservation.day, time: @reservation.time, name: @reservation.name, email: @reservation.email, phone_number: @reservation.phone_number, category: @reservation.category)
+        redirect_to new_reservation_path(day: @reservation.day, time: @reservation.time, name: @reservation.name, email: @reservation.email, phone_number: @reservation.phone_number, category: @reservation.category,selection: @reservation.selection)
         session.delete(:reservation)
         return
 
@@ -133,7 +135,7 @@ class ReservationsController < ApplicationController
     # 安全なデータなのか確認するためにストロングパラメーターとして設定
     private
         def reservation_params
-            params.require(:reservation).permit(:day, :time, :name, :email, :phone_number, :category, :start_time,:accepted)
+            params.require(:reservation).permit(:day, :time, :name, :email, :phone_number, :category, :selection, :start_time,:accepted)
         end
 
         def set_reservation
