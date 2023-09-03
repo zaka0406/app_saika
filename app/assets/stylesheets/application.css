@@ -435,6 +435,10 @@
   .service-content {
     margin-bottom: 10px; /* スマホ用のマージン */
     text-align: center;
+    font-size: 20px;
+    width: 300px;
+    margin-left: 30px;
+    line-height: 30px;
   }
   
   .service-container {
@@ -454,9 +458,10 @@
   }
   
   .service-comment {
-    font-size: 12px; /* スマホ用のフォントサイズ */
-    line-height: 18px; /* スマホ用の行の高さ */
+    font-size: 18px; /* スマホ用のフォントサイズ */
+    line-height: 25px; /* スマホ用の行の高さ */
     text-align: center;
+    margin: 20px;
   }
   
   /* フッター部分 */
