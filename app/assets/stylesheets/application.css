@@ -161,6 +161,8 @@
       .message-main-title{
         margin-top: 20px;
       }
+
+     
   
   
       /* service部分 */
@@ -194,7 +196,7 @@
         object-fit: cover; /* スマホ用の最大幅 */
         object-position: 250% 0;
       }
-      
+
         .service-img{
           height: 300px;
           width: 300px;
@@ -497,6 +499,14 @@
   .flash{
     font-size: 25px;
   }
+
+  .schedule{
+    font-size: 11px;
+  }
+
+  .breadcrumbs{
+    padding-right: 40px;
+  }
   
-        }
+}
         

@@ -1,0 +1,10 @@
+@media (max-width: 480px) {
+
+.table.table.table-striped{
+ width: 90%;
+}
+
+.calendar-heading{
+    margin: 10px 0 10px 130px;
+}
+}
