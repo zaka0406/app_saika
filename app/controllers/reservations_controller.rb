@@ -62,7 +62,8 @@ class ReservationsController < ApplicationController
       
   
       def show
-        editing_reservation_id = session[:editing_reservation_id]
+        @reservation = Reservation.find(params[:id])
+         editing_reservation_id = session[:editing_reservation_id]
         if editing_reservation_id.present?
           @reservation = Reservation.find(editing_reservation_id)
         end
