@@ -10,7 +10,6 @@
 </section>
 
 <script>
-// ページ読み込み時に実行される関数
 window.onload = function () {
   // メディアクエリの条件を関数にまとめる
   function applyMediaQuery() {
@@ -46,7 +45,20 @@ window.onload = function () {
       }
     });
   }
+
+  // 前回のページ遷移情報を取得
+  const lastPage = localStorage.getItem('lastPage');
+
+  // INDEXページに戻ってきた場合にリロードする
+  if (window.location.pathname === '/INDEX.html' && lastPage !== '/INDEX.html') {
+    // ページ遷移情報を更新
+    localStorage.setItem('lastPage', '/INDEX.html');
+
+    // ページをリロード
+    location.reload();
+  }
 };
+
 </script>
 
 <section class="service">

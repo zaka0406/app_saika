@@ -8,8 +8,24 @@
 
     <%= render partial: "confirm", locals: { contact: @contact} %>
 
-    <div class="retrun">
-    <%= link_to"戻る" ,saikas_path %>
-    </div>
+<div class="retrun">
+  <%= link_to "戻る", saikas_path, id: "return-link" %>
+</div>
 
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const returnLink = document.getElementById("return-link");
+  if (returnLink) {
+    returnLink.addEventListener("click", function(event) {
+      // デフォルトのクリック動作をキャンセル
+      event.preventDefault();
+
+      // saikas_pathにリダイレクト
+      window.location.href = "<%= saikas_path %>";
+    });
+  }
+});
+</script>
+
+  
 </div>
