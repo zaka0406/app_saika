@@ -412,10 +412,11 @@
   .main-message-image {
     height: auto;
     width: 80%; /* スマホ用の幅 */
-    padding: 20px 0;
-    border-radius: 50%;
+    padding: 30px 0;
+    border-radius: 20%;
     animation-name: fade;
     animation-duration: 2s;
+    margin: 30px 30px 0;
   }
   
   .message {
@@ -462,7 +463,7 @@
   .service-kyame {
     max-width: 100%; /* スマホ用の最大幅 */
     /* height: auto; */
-    border-radius: 50%;
+    border-radius: 20%;
   }
   
   .service-comment {
