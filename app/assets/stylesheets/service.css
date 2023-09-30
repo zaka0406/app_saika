@@ -2,10 +2,11 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    margin: 100px auto 0;
+    margin: 50px auto 0;
 }
 
 .product-title{
+  padding-top: 20px;
     text-align: center;
     font-size: 50px;
     color: #008800;
@@ -36,19 +37,31 @@
 }
 
 .menu-nav-name{
+    text-align: left;
+    padding-left: 30px;
+    margin-top: 10px;
     font-size: 24px;
     color: #008800;
-    font-weight: bolds;
+    font-weight: bold;
     line-height: 36px;
 }
 .menu-nav-contents{
+    padding: 10px 30px;
+    text-align: left;
     font-size: 16px;
     color: #008800;
-    line-height: 20px;
+    line-height: 25px;
 }
 
-.menu-nav-time,.menu-nav-price{
+.menu-nav-time_price{
+    padding: 0px 30px;
+    text-align: left;
+    line-height: 20px;
     color: #555555;
+}
+
+.product-reservation{
+  padding-bottom: 20px;
 }
 
 /* スマホサイズ用の設定 */
