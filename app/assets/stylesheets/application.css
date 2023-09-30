@@ -412,16 +412,14 @@
   .main-message-image {
     height: auto;
     width: 80%; /* スマホ用の幅 */
-    padding: 30px 0;
     border-radius: 20%;
     animation-name: fade;
     animation-duration: 2s;
-    margin: 30px 30px 0;
+    margin: 0px 30px 20px;
   }
   
   .message {
     font-size: 24px; /* スマホ用のフォントサイズ */
-    margin: 5px auto; /* スマホ用のマージン */
     padding-top: 10px; /* スマホ用のパディング */
     display: block; /* スマホサイズではブロック要素として */
   }
