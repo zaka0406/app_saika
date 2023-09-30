@@ -129,10 +129,11 @@
     }
   
     .main-message-image{
-      height: 300px;
+      object-fit: cover;
+      height: 500px;
       width: 400px;
-      padding: 20px 0px 0px 150px;
-      border-radius: 50%;
+      margin: 20px 0px 0px 40px;
+      border-radius: 30%;
       animation-name: fade;
       animation-duration: 2s;
     }
@@ -197,15 +198,15 @@
       }
       
       .service-img {
-        object-fit: cover; /* スマホ用の最大幅 */
-        object-position: 250% 0;
+        object-position: 90% 0;
       }
 
         .service-img,.service-kyames{
+          object-position: 90% 0;
           object-fit: cover;
           height: 300px;
           width: 300px;
-          border-radius: 50%;
+          border-radius: 30%;
           margin-top: 50px;
         }
   
