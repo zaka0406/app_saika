@@ -3,6 +3,7 @@
     
 }
 .about-message-image{
+    object-fit: cover;
     height: 400px;
     width: 500px;
     border-radius: 20%;
