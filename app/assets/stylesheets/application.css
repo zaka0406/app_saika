@@ -24,9 +24,14 @@
     z-index: 100;
   }
   
-  a,p,h1,h2{
+  a,p,h1{
     color:#555555;
   }
+
+  .service_path{
+    color: blue;
+  }
+
   input, textarea {
     color: #555555;
     font-family: Arial, sans-serif; /* 字体（フォント） */
