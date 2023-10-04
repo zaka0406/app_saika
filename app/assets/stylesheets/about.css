@@ -1,22 +1,24 @@
 .about{
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-top: 20px;
 }
 
 /* 画像 */
-.main-image{
-    text-align: center;  
+.main-img{
+    width: 50%;  
 }
+
 .about-message-image{
     object-fit: cover;
     height: 600px;
     width: 500px;
     border-radius: 5%;
-    margin: 20px auto 20px auto;
     animation-name: fade;
     animation-duration: 2s;
-    margin: 80px 20px 0px 20px;
+    margin-top: 30px;
+  
 }
 
 @keyframes fade{
@@ -29,10 +31,11 @@
   }
 
   /* 内容部分全体 */
-.about-message{
+.about-message,.bottom_space{
     text-align: left;
     font-size: 15px;
     line-height: 25px;
+    color: gray;
 }
 
 .self_main,.self_introduction,.self_answer,.self_contens,.self_conclusion{
@@ -44,39 +47,44 @@
 .self_main{
   font-size: 30px;
   font-weight: bold;
-  color: blueviolet;
+  color:#4169E1;
   margin-top: 20px;
   line-height: 35px;
+  /* text-shadow: 5px 5px 3px gray; */
 }
 
 .span-name{
   font-weight: bold;
-  color: blue;
+  color: 	#FF69A3;
 }
 
 .span_main{
   font-weight: bold;
+  font-size: 20px;
 }
 
 .span_coment{
   font-weight: bold;
-  color: chocolate;
+  color: red;
 }
 /* 資格部分 */
 .title_qualification{
-  margin: 40px 20px 10px;
+  margin: 40px 0px 10px ;
   text-align: left;
-  font-size: 25px;
+  font-size: 30px;
+  font-weight: bold;
 }
 .qualification{
     list-style-image:url("images/090716.png");
     text-align: left;
-    font-size: 25px;
-    margin-left: 50px;
+    font-size: 15px;
+    margin-left: 20px;
     line-height: 40px;
-    font-weight: bold;
 }
 
+.bottom_space {
+  margin-top: 10px;
+}
 /* メディアクエリ: 480px以下の場合のスタイル */
 @media screen and (max-width: 480px) {
   .about {
@@ -85,15 +93,20 @@
     text-align: center;
   }
 
+
   .about-message{
     margin: 0 10px 0 10px;
   }
 
+  .main-img{
+    width: 100%;
+}
   .about-message-image {
     max-height: 300px;
     max-width: 92%;
     margin: 0px;
     font-size: 14px;
+    margin-top: 20px;
   }
 
   .qualification {
@@ -110,7 +123,6 @@
   }
 
   .qualification{
-    font-size: 20px;
     margin-left: 50px;
 }
 
