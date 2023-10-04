@@ -411,11 +411,11 @@
   
   .main-message-image {
     height: auto;
-    width: 80%; /* スマホ用の幅 */
-    border-radius: 20%;
+    border-radius: 10%;
     animation-name: fade;
     animation-duration: 2s;
-    margin: 10px;
+    margin: 10px 35px 10px 0px;
+    max-width: 75%;
   }
   
   .message {
@@ -456,13 +456,6 @@
   
   /* .service-nav {
     display: none; }/* スマホサイズでは非表示 */
-  
-  .service-img,
-  .service-kyame {
-    max-width: 85%; /* スマホ用の最大幅 */
-    /* height: auto; */
-    border-radius: 10%;
-  }
   
   .service-comment {
     font-size: 18px; /* スマホ用のフォントサイズ */
@@ -515,6 +508,8 @@
 .service-img, .service-kyames {
   border-radius: 10%;
   margin-top: 0;
+  margin-right: 35px;
+  max-width: 100%;
 }
   
 }
