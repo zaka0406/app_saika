@@ -414,7 +414,7 @@
     border-radius: 10%;
     animation-name: fade;
     animation-duration: 2s;
-    margin: 10px 35px 10px 0px;
+    margin: 0px 25px 10px 0px;
     max-width: 75%;
   }
   
@@ -508,7 +508,7 @@
 .service-img, .service-kyames {
   border-radius: 10%;
   margin-top: 0;
-  margin-right: 35px;
+  margin-right: 25px;
   max-width: 100%;
 }
   
