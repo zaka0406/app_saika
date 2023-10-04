@@ -1,15 +1,22 @@
-.about-image{
-    text-align: center;
-    
+.about{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* 画像 */
+.main-image{
+    text-align: center;  
 }
 .about-message-image{
     object-fit: cover;
-    height: 400px;
+    height: 600px;
     width: 500px;
-    border-radius: 20%;
+    border-radius: 5%;
     margin: 20px auto 20px auto;
     animation-name: fade;
     animation-duration: 2s;
+    margin: 80px 20px 0px 20px;
 }
 
 @keyframes fade{
@@ -21,11 +28,90 @@
     }
   }
 
+  /* 内容部分全体 */
 .about-message{
-    text-align: center;
+    text-align: left;
+    font-size: 15px;
+    line-height: 25px;
 }
 
-.about-message-contents{
-    font-size: 15px;
-    line-height: 20px;
+.self_main,.self_introduction,.self_answer,.self_contens,.self_conclusion{
+  margin: 20px 0px;
+  font-size: 15px;
+  line-height: 25px;
+}
+/* 内容部分 */
+.self_main{
+  font-size: 30px;
+  font-weight: bold;
+  color: blueviolet;
+  margin-top: 20px;
+  line-height: 35px;
+}
+
+.span-name{
+  font-weight: bold;
+  color: blue;
+}
+
+.span_main{
+  font-weight: bold;
+}
+
+.span_coment{
+  font-weight: bold;
+  color: chocolate;
+}
+/* 資格部分 */
+.title_qualification{
+  margin: 40px 20px 10px;
+  text-align: left;
+  font-size: 25px;
+}
+.qualification{
+    list-style-image:url("images/090716.png");
+    text-align: left;
+    font-size: 25px;
+    margin-left: 50px;
+    line-height: 40px;
+    font-weight: bold;
+}
+
+/* メディアクエリ: 480px以下の場合のスタイル */
+@media screen and (max-width: 480px) {
+  .about {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-message{
+    margin: 0 10px 0 10px;
+  }
+
+  .about-message-image {
+    max-height: 300px;
+    max-width: 92%;
+    margin: 0px;
+    font-size: 14px;
+  }
+
+  .qualification {
+    margin-left: 0;
+  }
+
+  .self_main{
+    font-size: 25px;
+    margin-left: 10px;
+  }
+  .title_qualification{
+    font-size: 20px;
+    margin-top: 10px;
+  }
+
+  .qualification{
+    font-size: 20px;
+    margin-left: 50px;
+}
+
 }
