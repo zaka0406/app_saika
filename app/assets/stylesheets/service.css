@@ -32,7 +32,7 @@
     margin-left: 50px;
 }
 
-.menu-nav-name,.menu-nav-contents,.menu-nav-time,.menu-nav-price{
+.menu-nav-name,.menu-nav-time,.menu-nav-price{
     margin-bottom: 10px;
 }
 
@@ -45,18 +45,31 @@
     font-weight: bold;
     line-height: 36px;
 }
+
 .menu-nav-contents{
-    padding: 10px 30px;
+    padding: 10px 20px 10px; 
     text-align: left;
     font-size: 16px;
     color: #008800;
     line-height: 25px;
 }
 
+.service-list-nav{
+margin: 10px 30px;
+}
+
+.menu-nav-content,.menu-list-contents{
+  text-align: left;
+  font-size: 16px;
+  color: #008800;
+  line-height: 25px;
+  list-style-image:url("images/090716.png");
+
+}
 .menu-nav-time_price{
-    padding: 0px 30px;
+    padding-top: 10px;
     text-align: left;
-    line-height: 20px;
+    line-height: 25px;
     color: #555555;
 }
 
@@ -98,9 +111,13 @@
       line-height: 30px; /* 行の高さ調整 */
     }
   
-    .menu-nav-contents {
+    .menu-nav-contents{
       font-size: 14px; /* フォントサイズ調整 */
       line-height: 18px; /* 行の高さ調整 */
+    }
+
+    .menu-nav-content,.menu-list-contents{
+      font-size: 14px;
     }
   
     .menu-nav-time,
@@ -111,5 +128,9 @@
     .service-kyames {
       max-width: 80%;
     }
+
+    .menu-nav-time_price{
+      padding: 20px 20px 0 0;
   }
   
+}

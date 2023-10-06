@@ -28,8 +28,11 @@
     color:#555555;
   }
 
+  @import url('https://fonts.googleapis.com/css2?family=Cherry+Swash&display=swap');
   .service_path{
     color: blue;
+    font-family: 'Cherry Swash', cursive;
+    font-size: 50px;
   }
 
   input, textarea {

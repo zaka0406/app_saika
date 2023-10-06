@@ -5,7 +5,7 @@
 
 
    <div class="calendar">
-      <%= week_calendar events: @reservations do |date, reservations| %>
+      <%= month_calendar events: @reservations do |date, reservations| %>
         <%= date.day %>
       <% end %>
    </div>

@@ -1,13 +1,19 @@
 <div class="simple-calendar">
   <div class="calendar-heading">
-    <%= link_to t('simple_calendar.previous', default: 'Previous'), calendar.url_for_previous_view %>
+    <%= link_to t('simple_calendar.previous', default: '前週'), calendar.url_for_previous_view %>
     <span class="calendar-title"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></span>
-    <%= link_to t('simple_calendar.next', default: 'Next'), calendar.url_for_next_view %>
+    <%= link_to t('simple_calendar.next', default: '翌週'), calendar.url_for_next_view %>
+
+    <%# モデルで作成した１ヵ月以内の予約状況を取得した関数 Reservation.reservations_after_monthをreservationsへ代入 %>
+    <% reservations = Reservation.reservations_after_month %>
+    <% saikas = Saika.saikas_after_month %>
+  
   </div>
 
   <table class="table table-striped">
     <thead>
       <tr>
+      <th>時間</th>
         <% date_range.slice(0, 7).each do |day| %>
           <th><%= t('date.abbr_day_names')[day.wday] %></th>
         <% end %>
@@ -16,7 +22,8 @@
 
     <tbody>
       <% date_range.each_slice(7) do |week| %>
-        <tr>
+        <tr class="month_day">
+        <th></th>
           <% week.each do |day| %>
             <%= content_tag :td, class: calendar.td_classes_for(day) do %>
               <% if defined?(Haml) && respond_to?(:block_is_haml?) && block_is_haml?(passed_block) %>
@@ -27,6 +34,31 @@
             <% end %>
           <% end %>
         </tr>
+           <% times.each do |time| %>
+        <tr>
+          <td class="schedule"><%= time %></td>
+          <% week.each do |day| %>
+          <td>
+           <!-- 追加 -->
+                <!-- ここから -->
+                
+            <% if request.path.include?('admin') %>
+              <% if (day <= Date.today) || (day > Date.today && day <= Date.tomorrow.at_noon) || check_reservation(reservations, day, time) || check_saika_reservation(saikas, day, time) %>
+              <%= '×' %>
+              <% else %>
+              <%= link_to '○', new_saika_path(day: day, time: time) %>
+              <% end %>
+            <% else %>
+              <% if (day <= Date.today) || (day > Date.today && day <= Date.tomorrow.at_noon) || (day > 1.month.from_now.to_date) || check_reservation(reservations, day, time) || check_saika_reservation(saikas, day, time) %>
+              <%= '×' %>
+              <% else %>
+              <%= link_to '○', new_reservation_path(day: day, time: time) %>
+              <% end %>
+            <% end %>       
+          </td>
+          <% end %>    
+        </tr>
+        <% end %>
       <% end %>
     </tbody>
   </table>
