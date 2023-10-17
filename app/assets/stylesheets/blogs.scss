@@ -1,0 +1,52 @@
+// Place all the styles related to the Blogs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.blog_list{
+    margin: 20px auto;
+    font-size: 30px;
+}
+
+.blog_title{
+    margin: 5px 230px;
+}
+
+.blog_contents{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+.blog_content,.blog_time{
+    line-height: 20px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+@media (max-width: 480px) {
+    .blog_title{
+        text-align: left;
+    }
+
+    .blog_list {
+        font-size: 20px; /* フォントサイズを小さくする */
+    }
+
+    .blog_title {
+        margin: 5px 10px; /* 左右のマージンを調整 */
+    }
+
+    .blog_contents {
+        flex-direction: column; /* 縦並びに変更 */
+        align-items: flex-start; /* 左寄せに変更 */
+        margin: 0px 50px;
+        font-size: 15px;
+    }
+
+    .blog_content, .blog_time {
+        line-height: 15px; /* 行間を調整 */
+        margin-bottom: 5px; /* マージンを調整 */
+        text-align: left;
+    }
+}

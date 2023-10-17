@@ -4,6 +4,7 @@ class SaikasController < ApplicationController
  
 
     def index
+        @blogs = Blog.order(created_at: :asc).limit(10)
     end
     
     def about
@@ -11,6 +12,22 @@ class SaikasController < ApplicationController
 
     def service
     end
+
+    def show_blog
+        @blog = Blog.find(params[:id])
+        @blog_dates = extract_dates_and_contents(@blog.content)
+      end
+
+    # def show_blog
+    #     @blog = Blog.find(params[:id])
+    #     if @blog.url
+    #       redirect_to @blog.url
+    #     else
+    #       # もしurlがNULLの場合、特定のURLにリダイレクト
+    #       redirect_to "https://ameblo.jp/chi-harusora"
+    #     end
+    #   end
+      
     
     def admin
         @saika =  Saika.saikas_after_month
@@ -47,4 +64,18 @@ class SaikasController < ApplicationController
     def saika_reservation
         @reservations = Reservation.where(day: params[:day], time: params[:time])
     end
+
+    def extract_dates_and_contents(content)
+        # 正規表現を使って日付とコンテンツを抽出
+        regex = /(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})\n(.*?)\n/
+        matches = content.scan(regex)
+        
+        # 日付とコンテンツを対応付けてハッシュに格納
+        dates_and_contents = matches.map do |match|
+          [DateTime.parse(match[0]), match[1]]
+        end
+      
+        dates_and_contents
+      end
+
 end

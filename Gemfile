@@ -73,6 +73,10 @@ gem 'gretel'
 
 gem 'dotenv-rails'
 
+gem 'httparty'
+
+gem 'whenever'
+
 group :production do
   gem 'pg'
 end

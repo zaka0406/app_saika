@@ -1,8 +1,4 @@
 <section class="main-message">
-   <div class="message">
-     <div class="main-imag">
-      <%= image_tag "/images/213653.png",class: "main-message-image"%>
-    </div>
     <div class="message-main">
       <P class="message-main-nav">感性を研ぎ澄まし</P>
       <h2 class="message-main-title">心の声を聞く時間をあなたに</h2>
@@ -85,5 +81,21 @@ window.onload = function () {
       カウンセリングから導き出したアロマで<br>あなたオリジナルの香りが作れます       </p>
     </div>
   </div>
+
+<h1 class="blog_list">ブログ一覧</h1>
+
+<div class="blog_title">
+  <% @blogs.each do |blog| %>
+    <!-- ブログタイトルをリンクにする -->
+    <ul class="blog_contents">
+      <li class="blog_content"><%= link_to blog.title, blog.url %></li>
+      <!-- 日付と時間をカスタムフォーマットで表示 -->
+      <li class="blog_time"><%= blog.published_at.strftime("%Y-%m-%d") %></li>
+    </ul>
+<div>
+  <hr>
+
+<% end %>
+
 
 </section>

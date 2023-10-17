@@ -28,6 +28,10 @@
     color:#555555;
   }
 
+  a:hover{
+    color: #CCCCCC;
+  }
+
   @import url('https://fonts.googleapis.com/css2?family=Cherry+Swash&display=swap');
   .service_path{
     color: blue;
@@ -128,7 +132,7 @@
   .main-message{
       text-align: center;
       margin-top: 50px;
-    }
+     }
   
     .instagram-icon{
      height: 30px;
@@ -136,14 +140,18 @@
      padding-right: 20px;
     }
   
-    .main-message-image{
-      object-fit: cover;
-      height: 500px;
-      width: 400px;
-      margin: 20px 0px 0px 150px;
-      border-radius: 30%;
+    .message-main{
+      background-image: url("images/DSC03749.jpg");
+      background-size: cover; /* 画像を要素全体に表示 */
+      background-repeat: no-repeat; /* 画像の繰り返しを無効にする */
+      background-position: center center; /* 画像を中央に配置 */
+      /* object-fit: cover; */
+      height: 600px;
+      width: 100%;
+      border-radius: 2%;
       animation-name: fade;
       animation-duration: 2s;
+      font-size: 20px;
     }
   
     @keyframes fade{
@@ -159,13 +167,14 @@
       font-size: 30px;
       margin: 10px auto;
       padding-top: 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      /* display: flex; */
+      /* justify-content: space-between; */
+      /* align-items: center; */
       }
   
       .message-main{
-        padding-right: 100px;
+        padding-top: 200px;
+        font-size: 50px;
       }
   
       .message-main-title{
@@ -305,6 +314,13 @@
     text-align: center;
     margin-top: 15px;
   }
+
+  .message-main {
+    background-size: 100% 100%; /* 画像を要素全体に表示 */
+    height: 50px; /* 高さを自動調整（スクロール可能に） */
+    padding-top: 200px;
+    font-size: 20px;
+}
 
   /* ハンバーガーメニューアイコンのスタイル */
   .menu-icon {
@@ -510,13 +526,18 @@
   }
 
   .service-comment{
-    font-size: 14px;
+    font-size: 13px;
   }
   
 .service-img, .service-kyames {
   border-radius: 10%;
   margin-top: 0;
-  max-width: 100%;
+  max-width: 85%;
+  object-position: 30% 30%;
+}
+
+.service-nav.view {
+  margin-left: 15px;
 }
   
 }

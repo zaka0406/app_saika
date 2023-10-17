@@ -22,9 +22,13 @@ Rails.application.routes.draw do
       get "about"
       get "service"
       get "admin"
-
+ 
     end
   end
+
+# routes.rb
+  get '/saikas/blogs/:id', to: 'saikas#show_blog', as: 'saikas_blog'
+
 
   resources :contact, only: [:new, :create] do
     collection do
