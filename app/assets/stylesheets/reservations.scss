@@ -36,7 +36,7 @@ table.table.table-striped {
   table.table.table-striped thead th,
   table.table.table-striped tbody td {
     // セルを均等に8分割へ分割
-    width: calc(100% / 8);
+    width:calc(100% / 8);
     height: 30px; 
     text-align: center;
     vertical-align: middle;
