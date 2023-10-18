@@ -25,6 +25,13 @@ module AppSaika
     #   url: "redis://localhost:6379/0", # Redisのホストとポートを適切に設定
     #   namespace: "app_saika_#{Rails.env}" # 必要に応じて名前空間を設定
     # }
-
+    # config.active_record.default_url_options = { 
+    #   adapter: 'postgresql', 
+    #   database: 'saika_app_db_28fl', 
+    #   username: 'saika_app_db_28fl_user', 
+    #   password:ENV['production_DB_PASSWORD'], 
+    #   host: 'localhost'
+    # }
+  
   end
 end
