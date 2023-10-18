@@ -25,8 +25,7 @@ Rails.application.configure do
   # config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present? || ENV['RENDER'].present?
   # config/environments/production.rb
-  config.active_record.default_url_options = { adapter: 'postgresql', database: 'saika_app_db_28fl', username: 'saika_app_db_28fl_user', password:ENV['production.DB_PASSWORD']
-  , host: 'localhost' }
+  config.active_record.default_url_options = { adapter: 'postgresql', database: 'saika_app_db_28fl', username: 'saika_app_db_28fl_user', password:ENV['production.DB_PASSWORD'], host: 'localhost' }
 
   # Compress CSS using a preprocessor.
   # config.assets.css_compressor = :sass
