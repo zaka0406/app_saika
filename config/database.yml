@@ -59,8 +59,16 @@ test:
 #   username: app_saika
 #   password: <%= ENV['APP_SAIKA_DATABASE_PASSWORD'] %>
   
-production:
-  <<: *default
-  adapter: postgresql
-  url: <%= ENV['DATABASE_URL'] %>
+# production:
+#   <<: *default
+#   adapter: postgresql
+#   url: <%= ENV['DATABASE_URL'] %>
 
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: saika_app_db_28fl
+  username: saika_app_db_28fl_user
+  password: <%= ENV['production_DB_PASSWORD'] %>
+  host: localhost
+  port: 5432
