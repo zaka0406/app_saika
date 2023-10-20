@@ -22,15 +22,15 @@ namespace :update_blogs do
           url = item.at('link').text
           url ||= "デフォルトのURL"
 
-          ActiveRecord::Base.establish_connection(
-            adapter: 'postgresql',
-            encoding: 'unicode',
-            pool: 5,
-            username: 'aika_app_db_28fl_user',
-            password: ENV['production_DB_PASSWORD'],
-            host: 'localhost',
-            database: 'saika_app_db_28fl'
-            )
+          # ActiveRecord::Base.establish_connection(
+          #   adapter: 'postgresql',
+          #   encoding: 'unicode',
+          #   pool: 5,
+          #   username: 'aika_app_db_28fl_user',
+          #   password: ENV['production_DB_PASSWORD'],
+          #   host: 'localhost',
+          #   database: 'saika_app_db_28fl'
+          #   )
 
           Blog.create(
             title: title,
