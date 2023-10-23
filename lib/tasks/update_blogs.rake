@@ -1,12 +1,14 @@
 namespace :update_blogs do
-    desc "Update blogs from RSS feed"
-    task fetch: :environment do
-      require 'httparty'
-      require 'nokogiri'
+  desc "Update blogs from RSS feed"
+  task fetch: :environment do
+    # task fetch: :production do
+    require 'httparty'
+    require 'nokogiri'
   
-      # RSSフィードのURLを指定
-      feed_url = "http://rssblog.ameba.jp/chi-harusora/rss20.xml"
+    # RSSフィードのURLを指定
+    feed_url = "http://rssblog.ameba.jp/chi-harusora/rss20.xml"
   
+    begin
       # フィードを取得
       response = HTTParty.get(feed_url)
   
@@ -18,29 +20,23 @@ namespace :update_blogs do
           content = item.at('description').text
           published_at = item.at('pubDate').text
           theme = item.at('category')&.text || 'デフォルトのテーマ'
-           # URLを抽出
-          url = item.at('link').text
-          url ||= "デフォルトのURL"
+          url = item.at('link').text || "デフォルトのURL"
 
-          # ActiveRecord::Base.establish_connection(
-          #   adapter: 'postgresql',
-          #   encoding: 'unicode',
-          #   pool: 5,
-          #   username: 'aika_app_db_28fl_user',
-          #   password: ENV['production_DB_PASSWORD'],
-          #   host: 'localhost',
-          #   database: 'saika_app_db_28fl'
-          #   )
-
-          Blog.create(
-            title: title,
-            content: content,
-            published_at: DateTime.parse(published_at),
-            theme: theme,
-            url: url
-          )
+          # 重複データがないか確認
+          unless Blog.exists?(url: url)
+            Blog.create(
+              title: title,
+              content: content,
+              published_at: DateTime.parse(published_at),
+              theme: theme,
+              url: url
+            )
+          end
         end
       end
+    rescue StandardError => e
+      # エラーハンドリング: エラーが発生した場合の処理
+      puts "エラー: #{e.message}"
     end
   end
-  
+end

@@ -75,7 +75,7 @@ gem 'dotenv-rails'
 
 gem 'httparty'
 
-gem 'whenever'
+gem 'whenever', require: false
 
 group :production do
   gem 'pg'

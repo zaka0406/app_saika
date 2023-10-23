@@ -17,6 +17,12 @@ default: &default
   password: <%= ENV['DB_PASSWORD'] %>
   host: localhost
   # SSLを無効化
+  # adapter: postgresql
+  # database: saika_app_db_28fl
+  # username: saika_app_db_28fl_user
+  # password: <%= ENV['production_DB_PASSWORD'] %>
+  # host: localhost
+  # port: 5432
   
   ssl_mode: :disabled
   sslverify: false
@@ -68,6 +74,6 @@ production:
 #   adapter: postgresql
 #   database: saika_app_db_28fl
 #   username: saika_app_db_28fl_user
-#   password: <%= ENV['DATABASE_URL'] %>
+#   password: <%= ENV['production_DB_PASSWORD'] %>
 #   host: localhost
 #   port: 5432

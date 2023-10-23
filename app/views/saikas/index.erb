@@ -88,7 +88,7 @@ window.onload = function () {
   <% @blogs.each do |blog| %>
  
     <ul class="blog_contents">
-      <li class="blog_content"><%= link_to blog.title, blog.url %></li>
+      <li class="blog_content"><%= link_to blog.title, blog.url,target: "_blank" %></li>
       <!-- 日付と時間をカスタムフォーマットで表示 -->
       <li class="blog_time"><%= blog.published_at.strftime("%Y-%m-%d") %></li>
     </ul>
