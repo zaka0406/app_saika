@@ -4,7 +4,7 @@ class SaikasController < ApplicationController
  
 
     def index
-        @blogs = Blog.order(created_at: :asc).limit(10)
+        @blogs = Blog.order(created_at: :desc).limit(10)
     end
     
     def about
