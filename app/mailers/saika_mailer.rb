@@ -46,3 +46,4 @@ class SaikaMailer < ApplicationMailer
           @reservation = reservation
           mail(to: 'saikachihiro.3588@gmail.com', subject: 'カウンセリング前日です')
         end
+end
