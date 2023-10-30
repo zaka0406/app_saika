@@ -36,4 +36,13 @@ class SaikaMailer < ApplicationMailer
           mail(to: 'saikachihiro.3588@gmail.com', subject: '予約がキャンセルされました')
         end
     
-end
+        # カウンセリング前日のリマインダーメールを送信するメソッド
+        def send_reminder(reservation)
+          @reservation = reservation
+          mail(to: reservation.email, subject: 'カウンセリング前日のご案内')
+        end
+
+        def send_admin_reminder(reservation)
+          @reservation = reservation
+          mail(to: 'saikachihiro.3588@gmail.com', subject: 'カウンセリング前日です')
+        end

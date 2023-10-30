@@ -1,7 +1,9 @@
 namespace :update_blogs do
   desc "Update blogs from RSS feed"
   task fetch: :environment do
-    # task fetch: :production do
+    # 本番環境で実行する
+    ENV['RAILS_ENV'] = 'production'
+ 
     require 'httparty'
     require 'nokogiri'
   
