@@ -1,9 +1,6 @@
 namespace :update_blogs do
   desc "Update blogs from RSS feed"
   task fetch: :environment do
-    # 本番環境で実行する
-    ENV['RAILS_ENV'] = 'production'
- 
     require 'httparty'
     require 'nokogiri'
   
@@ -35,6 +32,9 @@ namespace :update_blogs do
             )
           end
         end
+      else
+        # エラーメッセージを記録
+        puts "HTTPエラー: #{response.code}"
       end
     rescue StandardError => e
       # エラーハンドリング: エラーが発生した場合の処理

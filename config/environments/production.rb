@@ -24,6 +24,7 @@ Rails.application.configure do
   # Apache or NGINX already handles this.
   # config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present? || ENV['RENDER'].present?
+  
   # config/environments/production.rb
 
   # Compress CSS using a preprocessor.
@@ -130,5 +131,18 @@ Rails.application.configure do
     authentication:       'login',
     enable_starttls_auto: true
   }
+
+  # config/environments/production.rb
+
+# # データベースの接続設定
+# config.database_configuration_file = File.join(File.expand_path('..', __dir__), 'database.yml')
+# config.database_configuration = config.database_configuration_file
+# config.database_configuration['production']['adapter'] = 'postgresql' # データベースの種類に合わせて変更
+# config.database_configuration['production']['pool'] = 5 # プールのサイズなどを設定
+# config.database_configuration['production']['timeout'] = 5000
+# config.database_configuration['production']['reaping_frequency'] = 10
+# config.database_configuration['production']['prepared_statements'] = true
+
+config.log_level = :error  # エラーメッセージのみを記録する場合
 
 end

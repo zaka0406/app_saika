@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2023_10_16_091239) do
 
-  create_table "blogs", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "blogs", charset: "utf8mb3", force: :cascade do |t|
     t.string "title", null: false
     t.text "content", null: false
     t.datetime "published_at", null: false
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2023_10_16_091239) do
     t.string "url"
   end
 
-  create_table "contacts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "contacts", charset: "utf8mb3", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", null: false
     t.string "phone_number", null: false
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2023_10_16_091239) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "reservations", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "reservations", charset: "utf8mb3", force: :cascade do |t|
     t.date "day", null: false
     t.string "time", null: false
     t.datetime "start_time", null: false
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2023_10_16_091239) do
     t.string "selection"
   end
 
-  create_table "saikas", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "saikas", charset: "utf8mb3", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.date "day"
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2023_10_16_091239) do
     t.datetime "start_time"
   end
 
-  create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "users", charset: "utf8mb3", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.datetime "remember_created_at"
