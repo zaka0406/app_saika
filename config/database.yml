@@ -75,5 +75,5 @@ production:
   database: saika_app_db_28fl
   username: saika_app_db_28fl_user
   password: <%= ENV['production_DB_PASSWORD'] %>
-  host: 192.168.0.4
+  host: dpg-cknn66u1101c73843jmg-a
   port: 5432
